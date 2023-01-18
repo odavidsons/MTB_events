@@ -1,0 +1,72 @@
+.sidebar {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 10px;
+  background-color: rgb(123, 129, 216);
+  text-align: center;
+}
+.sidebar h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sidebar hr {
+  border: 1px solid black;
+}
+
+.sidebar a {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 0px 20px 0px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+  display: block;
+}
+.sidebar a:hover {
+  color: #000000;
+  background-color: rgb(230, 230, 230);
+}
+.sidebar .exit {
+  bottom: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+}
+.topbar {
+  top: 0;
+  height: 5%;
+  margin-left: 15%;
+  display: flex;
+}
+.topbar p {
+  font-size: 20px;
+  padding: 5px 20px 5px 20px;
+}
+.main {
+  height: 100vh;
+  margin-left: 16%;
+}
+.main h1 {
+  padding: 5px 0px 40px 0px;
+}
+.evento {
+  width: 100px;
+  height: 250px;
+
+  background-color: rgb(141, 49, 216);
+  padding: 25px 0px 0px 20px;
+}
+.card-deck {
+  display: flex;
+}
+.card h5 {
+  color: white;
+  padding: 10px 0px 10px 0px;
+}
+.card p {
+  color: white;
+  padding: 10px 0px 0px 0px;
+}

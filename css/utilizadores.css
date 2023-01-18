@@ -1,0 +1,132 @@
+.sidebar {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 10px;
+  background-color: rgb(123, 129, 216);
+  text-align: center;
+}
+.sidebar h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sidebar hr {
+  border: 1px solid black;
+}
+.sidebar a {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 0px 20px 0px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+  display: block;
+}
+.sidebar a:hover {
+  color: #000000;
+  background-color: rgb(230, 230, 230);
+}
+.sidebar .exit {
+  bottom: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+}
+.main {
+  height: 100vh;
+  margin-left: 15%;
+  padding: 0px 0px 0px 0px;
+}
+
+.collapsible {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 15%;
+  background-color: rgb(123, 129, 216);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 18px;
+  width: 70%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 18px;
+}
+.collapsible:after {
+  content: "\002B";
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\2212";
+}
+
+.active,
+.collapsible:hover {
+  background-color: rgb(79, 85, 167);
+}
+.topbar {
+  top: 0;
+  height: 5%;
+  margin-left: 15%;
+  display: flex;
+}
+.topbar p {
+  font-size: 20px;
+  padding: 5px 20px 5px 20px;
+}
+.content {
+  margin-left: 15%;
+  width: 70%;
+  padding: 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+form .caixa_registo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+form input {
+  font-family: inherit;
+  width: 80%;
+  outline: none;
+  background-color: #fff;
+  border-radius: 2px;
+  border: none;
+  display: block;
+  padding: 0.9rem 0.5rem;
+  font-size: 17px;
+  color: black;
+  text-indent: 20px;
+  margin-bottom: 10px;
+}
+
+form .btn_registo {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.9rem 2.5rem;
+  text-align: center;
+  background-color: rgb(79, 85, 167);
+  color: #fff;
+  border-radius: 2px;
+  font-size: 17px;
+}
