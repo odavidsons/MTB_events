@@ -64,18 +64,26 @@
   background-color: rgb(141, 49, 216);
   padding: 25px 0px 0px 20px;
 }
-.card-deck {
-  display: flex;
-}
-.card h5 {
-  color: white;
-  padding: 10px 0px 10px 0px;
-}
-.card p {
-  color: white;
-  padding: 10px 0px 0px 0px;
-}
 
-.eventos_passados {
-  opacity: 85%;
+
+.form {
+  padding: 50px 0px 0px 0px;
+  width: 50%;
+  margin: auto;
+}
+.form .avatar img{
+  width: 150px;
+}
+.form .btn_registo {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  background-color: rgb(79, 85, 167);
+  color: #fff;
+  border-radius: 2px;
+  font-size: 16px;
 }

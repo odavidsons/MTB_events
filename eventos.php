@@ -12,6 +12,7 @@ $id = $_SESSION['id_utilizador'];
 $sql = "SELECT * FROM users WHERE id = '$id'";
 $resultado = mysqli_query($conn, $sql);
 $dados = mysqli_fetch_array($resultado);
+$_SESSION['session_name'] = $dados['username'];
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -29,18 +30,21 @@ mysqli_close($conn);
 <body>
 
   <div class="sidebar">
-    <h1>Menu</h1>
-    <hr>
-    <?php
-    if ($_SESSION['usertype'] == 1) {
-      echo '<a href="centro.php">Início</a>';
-      echo '<a href="utilizadores.php">Utilizadores</a>';
-      echo '<a href="eventos.php">Eventos</a>';
-      echo '<div class="exit"><a href="includes/logout.php">Sair</a></div>';
-    } else {
-      echo '<div class="exit"><a href="includes/logout.php">Sair</a></div>';
-    }
-    ?>
+     <h1>Menu</h1>
+     <hr>
+     <?php
+      if ($_SESSION['usertype'] == 1) {
+         echo '<a href="centro.php">Início</a>';
+         echo '<a href="utilizadores.php">Utilizadores</a>';
+         echo '<a href="eventos.php">Eventos</a>';
+         echo '<div class="perfil"><a href="perfil.php">Perfil</a></div>';
+         echo '<div class="exit"><a href="includes/logout.php">Sair</a></div>';
+      } else {
+        echo '<a href="centro.php">Início</a>';
+        echo '<div class="perfil"><a href="perfil.php">Perfil</a></div>';
+         echo '<a class="exit" href="includes/logout.php">Sair</a>';
+      }
+      ?>
   </div>
   <div class="topbar">
          <p>Está em modo de
@@ -124,6 +128,50 @@ mysqli_close($conn);
           echo "<td><a href='includes/editar_evento_imagem.php?id=" . $registo['id'] . "'><button type='button'class='btn btn-secondary editbtn'>Mudar Imagem</button></a></td>";
           echo '</tr>';
           echo '</tbody>';
+        }
+        mysqli_close($conn);
+        ?>
+        </form>
+      </table>
+    </div>
+
+
+        
+  <button type="button" class="collapsible">Inscrições</button>
+    <div class="content">
+      <?php
+      require_once 'includes/conexao.php';
+      $conn = mysqli_connect('localhost', 'root', '') or die("Erro na ligação");
+      mysqli_select_db($conn, 'dcweventos') or die("Erro na selecção");
+      $consulta = "SELECT * FROM users_eventos";
+      $resultado = mysqli_query($conn, $consulta) or die("Erro na consulta");
+      $nregistos = mysqli_num_rows($resultado);
+      ?>
+
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th>ID de inscrição</td>
+            <th>ID de Evento</td>
+            <th>ID Utilizador</td>
+            <th colspan="3">Ações</td>
+
+          </tr>
+        </thead>
+        <?php
+        for ($i = 0; $i < $nregistos; $i++) {
+          $registo = mysqli_fetch_assoc($resultado);
+          if ($registo['ativo'] ==1){
+          echo '<tbody>';
+          echo '<tr>';
+          echo '<th>' . $registo['id'] . '</td>';
+          echo '<td>' . $registo['id_evento'] . '</td>';
+          echo '<td>' . $registo['id_user'] . '</td>';
+          echo '<th></td>';
+          echo "<td><a href='includes/remover_inscricao.php?id=" . $registo['id'] . "'><button type='button'class='btn btn-danger editbtn'> Remover </button></a></td>";
+          echo '</tr>';
+          echo '</tbody>';
+          }
         }
         mysqli_close($conn);
         ?>

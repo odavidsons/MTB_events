@@ -5,13 +5,14 @@ require_once 'includes/conexao.php';
 session_start();
 //verificar
 if (!isset($_SESSION['ligado'])):
-  header('Location: centro.php');
+  header('Location: utilizadores.php');
 endif;
 //dados do utilizador
 $id = $_SESSION['id_utilizador'];
 $sql = "SELECT * FROM users WHERE id = '$id'";
 $resultado = mysqli_query($conn, $sql);
 $dados = mysqli_fetch_array($resultado);
+$_SESSION['session_name'] = $dados['username'];
 mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -29,18 +30,21 @@ mysqli_close($conn);
 <body>
 
   <div class="sidebar">
-    <h1>Menu</h1>
-    <hr>
-    <?php
-    if ($_SESSION['usertype'] == 1) {
-      echo '<a href="centro.php">Início</a>';
-      echo '<a href="utilizadores.php">Utilizadores</a>';
-      echo '<a href="eventos.php">Eventos</a>';
-      echo '<div class="exit"><a href="includes/logout.php">Sair</a></div>';
-    } else {
-      echo '<div class="exit"><a href="includes/logout.php">Sair</a></div>';
-    }
-    ?>
+     <h1>Menu</h1>
+     <hr>
+     <?php
+      if ($_SESSION['usertype'] == 1) {
+         echo '<a href="centro.php">Início</a>';
+         echo '<a href="utilizadores.php">Utilizadores</a>';
+         echo '<a href="eventos.php">Eventos</a>';
+         echo '<div class="perfil"><a href="perfil.php">Perfil</a></div>';
+         echo '<div class="exit"><a href="includes/logout.php">Sair</a></div>';
+      } else {
+        echo '<a href="centro.php">Início</a>';
+        echo '<div class="perfil"><a href="perfil.php">Perfil</a></div>';
+         echo '<a class="exit" href="includes/logout.php">Sair</a>';
+      }
+      ?>
   </div>
   <div class="topbar">
          <p>Está em modo de

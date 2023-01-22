@@ -22,15 +22,11 @@ if (isset($_POST['btn_login'])):
         mysqli_close($conn);
         $admin = "SELECT tipo FROM users WHERE email = '$email' AND password = '$password'";
         $_SESSION['usertype'] = $dados['tipo'];
-        if ($_SESSION['usertype'] == 1): {
-            $_SESSION['ligado'] = true;
-            $_SESSION['id_utilizador'] = $dados['id'];
-            $_SESSION['session_name'] = $dados['username'];
-            header('Location: centro.php');
-          }
-        else:
-          $erros[] = "<li> Utilizador não é administrador!</li>";
-        endif;
+        $_SESSION['ligado'] = true;
+        $_SESSION['id_utilizador'] = $dados['id'];
+        $_SESSION['session_name'] = $dados['username'];
+        header('Location: centro.php');
+
       else:
         $erros[] = "<li> Utilizador ou password errado!</li>";
       endif;
@@ -77,6 +73,7 @@ endif;
         <div class="caixa_login">
           <button class="btn_login" name="btn_login" type="submit">Entrar</button>
         </div>
+        <p>Não tem conta? <a href="registar.php">Registar-se</a></p>
     </form>
   </div>
 </body>

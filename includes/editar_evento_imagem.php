@@ -5,14 +5,14 @@
     if (!isset($_SESSION['ligado'])):
       header('Location: editar_evento.php');
     endif;
-    
+
     $nome= "";
     $local= "";
     $date= "";
     $vagas= "";
     $ativo= "";
     $imagem= "";
-    
+
 
     if (isset($_GET['id'])){
         $id = $_GET['id'];
@@ -25,9 +25,9 @@
         $ativo= $data['ativo'];
         $imagem= $data['imagem'];
       }
-      
+
       if (isset($_POST['btn_editar'])){
-        
+
         if ($_FILES['image']['name'] !="")
         {
         $file = $_FILES['image'];
@@ -48,7 +48,7 @@
                     $filenamenew = uniqid('', true).".".$fileactualext;
                     $filedestination = '../images/'.$filenamenew;
                     move_uploaded_file($filetmpname, $filedestination);
-                    
+
                 }else{
                     echo 'A imagem é demasiado grande.';
                 }
@@ -67,7 +67,7 @@
         }else{
             header("Location: ../eventos.php?cancelado");
         }
-}   
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -106,15 +106,15 @@
         </div>
         <label for="file">Imagem atual: <?php echo $imagem ?></label>
         <img src="../images/<?php echo $imagem ?>" alt="" width="100"><br><br><br>
-        
+
         <input type="file" name="image" accept=".jpeg,.jpg,.png" />
-        
+
         <div class="caixa_registo">
           <button class="btn_registo" name="btn_editar" type="submit">Atualizar</button>
         </div>
       </form>
-      
-    </div>    
+
+    </div>
 </div>
 
 </body>
