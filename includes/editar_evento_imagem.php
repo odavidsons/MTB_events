@@ -3,71 +3,15 @@
     session_start();
     //verificar
     if (!isset($_SESSION['ligado'])):
-      header('Location: editar_evento.php');
+      header('Location: editar_evento_imagem.php');
     endif;
-
-    $nome= "";
-    $local= "";
-    $date= "";
-    $vagas= "";
-    $ativo= "";
-    $imagem= "";
-
-
+    
     if (isset($_GET['id'])){
-        $id = $_GET['id'];
-        $select= mysqli_query($conn,  "SELECT * FROM eventos WHERE id=$id");
-        $data= mysqli_fetch_assoc($select);
-        $nome= $data['nome'];
-        $local= $data['local'];
-        $date= $data['data'];
-        $vagas= $data['vagas'];
-        $ativo= $data['ativo'];
-        $imagem= $data['imagem'];
-      }
+      $id = $_GET['id'];
+    $select = "SELECT imagem FROM eventos WHERE id='$id'";
+    $imagem = "";
+    }
 
-      if (isset($_POST['btn_editar'])){
-
-        if ($_FILES['image']['name'] !="")
-        {
-        $file = $_FILES['image'];
-        $filename = $_FILES['image']['name'];
-        $filetmpname = $_FILES['image']['tmp_name'];
-        $filesize = $_FILES['image']['size'];
-        $fileerror = $_FILES['image']['error'];
-        $filetype = $_FILES['image']['type'];
-
-        $fileext = explode('.', $filename);
-        $fileactualext = strtolower(end($fileext));
-
-        $allowed = array('jpg', 'jpeg', 'png');
-
-        if (in_array($fileactualext, $allowed)) {
-            if ($fileerror === 0){
-                if ($filesize < 1000000){
-                    $filenamenew = uniqid('', true).".".$fileactualext;
-                    $filedestination = '../images/'.$filenamenew;
-                    move_uploaded_file($filetmpname, $filedestination);
-
-                }else{
-                    echo 'A imagem é demasiado grande.';
-                }
-            }else {
-                echo 'Ocorreu um erro com o ficheiro.';
-            }
-        }else {
-            echo 'Tipo de ficheiro não suportado.';
-        }
-        $filenamenew = uniqid('', true).".".$fileactualext;
-        $filedestination = '../images/'.$filenamenew;
-        move_uploaded_file($filetmpname, $filedestination);
-        $sql= "UPDATE eventos SET nome='$nome',local='$local',data='$date', vagas='$vagas', ativo='$ativo', imagem='$filenamenew' WHERE id='$id'";
-        mysqli_query($conn, $sql);
-        header("Location: ../eventos.php?mudado=sucesso");
-        }else{
-            header("Location: ../eventos.php?cancelado");
-        }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +44,7 @@
 
   <div class="main">
   <div class="content" id="editar">
-      <form class="criar_utilizador" action="" method="POST">
+      <form class="criar_utilizador" action="upload_imagem.php" method="POST" enctype="multipart/form-data">
       <div class="caixa_registo">
       <input type="hidden" value="<?php echo $id ?>" name="update_id" id="update_id">
         </div>

@@ -86,7 +86,7 @@ mysqli_close($conn);
     <div class="content">
       <?php
       require_once 'includes/conexao.php';
-      $conn = mysqli_connect('localhost', 'root', '') or die("Erro na ligação");
+      $conn = mysqli_connect('localhost', 'username', 'password') or die("Erro na ligação");
       mysqli_select_db($conn, 'dcweventos') or die("Erro na selecção");
       $consulta = "SELECT * FROM eventos";
       $resultado = mysqli_query($conn, $consulta) or die("Erro na consulta");
@@ -141,7 +141,7 @@ mysqli_close($conn);
     <div class="content">
       <?php
       require_once 'includes/conexao.php';
-      $conn = mysqli_connect('localhost', 'root', '') or die("Erro na ligação");
+      $conn = mysqli_connect('localhost', 'username', 'password') or die("Erro na ligação");
       mysqli_select_db($conn, 'dcweventos') or die("Erro na selecção");
       $consulta = "SELECT * FROM users_eventos";
       $resultado = mysqli_query($conn, $consulta) or die("Erro na consulta");
