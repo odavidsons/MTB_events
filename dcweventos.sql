@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 28-Fev-2023 às 17:20
+-- Tempo de geração: 28-Fev-2023 às 18:42
 -- Versão do servidor: 8.0.32-0ubuntu0.22.04.2
 -- versão do PHP: 8.1.2-1ubuntu2.10
 
@@ -61,17 +61,18 @@ CREATE TABLE `users` (
   `password` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `registration_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `tipo` int NOT NULL DEFAULT '0',
-  `ativo` int NOT NULL DEFAULT '1'
+  `ativo` int NOT NULL DEFAULT '1',
+  `imagem` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `registration_date`, `tipo`, `ativo`) VALUES
-(9, 'admin', 'admin@gmail.com', 'admin', '2023-01-22 19:31:52', 1, 1),
-(14, 'manuel', 'manuel@mail', '1', '2022-12-04 03:48:59', 0, 1),
-(15, 'André', 'andre@gmail.com', '123', '2022-12-04 03:51:06', 0, 1);
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `registration_date`, `tipo`, `ativo`, `imagem`) VALUES
+(9, 'admin', 'admin@gmail.com', 'admin', '2023-01-22 19:31:52', 1, 1, ''),
+(14, 'manuel', 'manuel@mail', '1', '2022-12-04 03:48:59', 0, 1, ''),
+(15, 'André', 'andre@gmail.com', '123', '2022-12-04 03:51:06', 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,7 @@ ALTER TABLE `users_eventos`
 -- AUTO_INCREMENT de tabela `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de tabela `users`
