@@ -90,7 +90,7 @@ if (isset($_POST['btn_editar'])){
      <div class="form">
      <form class="editar_perfil" action="" method="POST">
        <div class="avatar">
-         <img src="images/avatar.png" alt="">
+         <a href="includes/change_avatar.php?id=<?php echo $id ?>"><img src="images/avatar.png" id="avatar" alt=""></a>
        </div>
        <label for="fullName">Nome</label>
        <input type="text" class="form-control" id="fullName" name="utilizador" value="<?php echo $dados['username'] ?>">

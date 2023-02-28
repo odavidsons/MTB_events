@@ -1,10 +1,6 @@
 <?php
     include_once 'conexao.php';
-    $nome = $_POST['nome'];
-    $local = $_POST['local'];
-    $data = $_POST['data'];
-    $vagas = $_POST['vagas'];
-
+    $id = $_POST['update_id'];
     $file = $_FILES['image'];
 
     $filename = $_FILES['image']['name'];
@@ -25,9 +21,9 @@
                 $filenamenew = uniqid('', true).".".$fileactualext;
                 $filedestination = '../images/'.$filenamenew;
                 move_uploaded_file($filetmpname, $filedestination);
-                $sql = "INSERT INTO eventos ". "(nome,local, data, vagas,imagem) "."VALUES ". "('$nome','$local','$data', '$vagas', '$filenamenew')";
+                $sql = "UPDATE users SET imagem='$filenamenew' WHERE id='$id'";
                 mysqli_query($conn, $sql);
-                header("Location: ../eventos.php?criado=sucesso_img_".$filenamenew."");
+                header("Location: ../perfil.php?atualizado=sucesso");
                 
             }else{
                 echo 'A imagem é demasiado grande.';
@@ -39,10 +35,7 @@
         echo 'Tipo de ficheiro não suportado.';
     }
 }else{
-    $icone="icone_default.png";
-    $sql = "INSERT INTO eventos ". "(nome,local, data, vagas,imagem) "."VALUES ". "('$nome','$local','$data', '$vagas', '$icone')";
-    mysqli_query($conn, $sql);
-    header("Location: ../eventos.php?imagem_vazia");
+    header("Location: ../perfil.php?imagem_invalida");
 }
 
     
