@@ -52,17 +52,12 @@
 }
 .main {
   height: 100vh;
+  width: auto;
   margin-left: 16%;
+  padding: 0px 0px 0px 0px;
 }
 .main h1 {
   padding: 5px 0px 40px 0px;
-}
-.evento {
-  width: 100px;
-  height: 250px;
-
-  background-color: rgb(141, 49, 216);
-  padding: 25px 0px 0px 20px;
 }
 .card-deck {
   display: flex;
@@ -75,7 +70,13 @@
   color: white;
   padding: 10px 0px 0px 0px;
 }
-
+.eventos_ativos {
+  width: auto;
+}
 .eventos_passados {
   opacity: 85%;
+  width: auto;
+}
+.eventos_inscritos {
+  width: auto;
 }

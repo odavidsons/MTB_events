@@ -120,6 +120,7 @@ mysqli_close($conn);
       
    </div>
    </div>
+   </div>
       <div class="eventos_passados">
 
       <h3>Eventos passados</h3>
@@ -162,6 +163,7 @@ mysqli_close($conn);
       mysqli_close($conn);
       ?>
       </div>
+      
       <div class="eventos_inscritos">
 
       <h3>Eventos inscritos</h3>
