@@ -7,7 +7,7 @@
   left: 0;
   overflow-x: hidden;
   padding-top: 10px;
-  background-color: rgb(123, 129, 216);
+  background-color: rgb(69, 97, 190);
   text-align: center;
 }
 .sidebar h1 {
@@ -57,13 +57,6 @@
 .main h1 {
   padding: 5px 0px 40px 0px;
 }
-.evento {
-  width: 100px;
-  height: 250px;
-
-  background-color: rgb(141, 49, 216);
-  padding: 25px 0px 0px 20px;
-}
 
 .form {
   padding: 50px 0px 0px 0px;
@@ -81,10 +74,14 @@
   margin: 0 auto;
   padding: 0.5rem 1.5rem;
   text-align: center;
-  background-color: rgb(79, 85, 167);
+  background-color: rgb(69, 97, 190);
   color: #fff;
   border-radius: 2px;
   font-size: 16px;
+}
+
+.form .btn_registo:hover {
+  background-color: rgb(79, 106, 194);
 }
 #avatar:hover {
   opacity: 15%;

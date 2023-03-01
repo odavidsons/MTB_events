@@ -1,43 +1,42 @@
 #bg {
-    background-image: url('../images/BTT_Mobile.jpg');
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    filter: blur(4px);
-}
-  
-body {
-font-family: 'Arial', sans-serif;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-overflow: hidden;
-margin: 0;
-padding: 0;
+  background-image: url("../images/BTT_Mobile.jpg");
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: blur(4px);
 }
 
-li{
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+li {
   color: white;
   margin-bottom: 10px;
   list-style: none;
 }
 form {
-    width: 350px;
-    position: relative;
+  width: 350px;
+  position: relative;
 }
 
-form h1{
-    text-align: center;
-    color: #fff;
-
+form h1 {
+  text-align: center;
+  color: #fff;
 }
 
-form .caixa_login{
-    display: -webkit-box;
+form .caixa_login {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
@@ -51,22 +50,22 @@ form .caixa_login{
 }
 
 form input {
-    font-family: inherit;
-    width: 100%;
-    outline: none;
-    background-color: #fff;
-    border-radius: 4px;
-    border: none;
-    display: block;
-    padding: 0.9rem 0.5rem;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-    font-size: 17px;
-    color: black;
-    text-indent: 20px;
-  }
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  display: block;
+  padding: 0.9rem 0.5rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+  color: black;
+  text-indent: 20px;
+}
 
-form .btn_login{
-    outline: none;
+form .btn_login {
+  outline: none;
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -78,5 +77,17 @@ form .btn_login{
   border-radius: 4px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   font-size: 18px;
-    
+}
+
+form .btn_login:hover {
+  background-color: #526dc5;
+}
+
+form p {
+  text-decoration: none;
+  color: white;
+}
+
+form a {
+  color: white;
 }
