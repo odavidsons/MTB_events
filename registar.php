@@ -19,7 +19,7 @@ require_once 'includes/conexao.php';
 
   <div>
 
-    <form action="includes/registar.php ?>" method="post">
+    <form action="includes/utilizadores/registar.php ?>" method="post">
       <h1>Criar conta</h2>
         <?php
         if (!empty($erros)):
@@ -43,7 +43,7 @@ require_once 'includes/conexao.php';
           <button class="btn_login" name="btn_login" type="submit">Criar</button>
         </div>
         <p><a href="index.php">Voltar</a></p>
-        
+
     </form>
   </div>
 </body>
